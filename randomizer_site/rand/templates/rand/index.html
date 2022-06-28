@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <p align="center">
+        <a href="{% url 'random' %}">Random</a>
+    </p>
+    <p align="center">
+        <a href="{% url 'add_topic' %}">Add Topic</a>
+    </p>
+    <p align="center">
+        <a href="{% url 'show_all_topics' %}">Show All Topics</a>
+    </p>
+{% endblock %}
