@@ -14,8 +14,13 @@ class LearningForm(forms.ModelForm):
             'subtitle': forms.TextInput(attrs={
                 'placeholder': 'Subtitle'
             }),
-            'link': forms.TextInput(attrs={
+            'link': forms.URLInput(attrs={
                 'placeholder': 'Source'
             })
         }
 
+    def clean_title(self):
+        return self.cleaned_data['title'].upper()
+
+    def clean_subtitle(self):
+        return self.cleaned_data['subtitle'].upper()

@@ -26,7 +26,7 @@ def add_topic(request):
         form = LearningForm(request.POST)
         if form.is_valid():
             form.save()
-            return just_added(request)
+            return show_all_topics(request)
         else:
             error = 'Error!'
 
@@ -87,7 +87,7 @@ def edit_topic(request, id):
             instance.date_updated = datetime.now()
             instance.save()
 
-            return just_edited(request)
+            return get_topic_info(request, id)
 
     form = LearningForm(instance=instance)
     context = {

@@ -11,7 +11,7 @@
                 {{ topic.subtitle }}
             </b> <br> <br>
             Are you sure you want to delete this topic? <br> <br>
-            <a href="{% url 'deleted' id %}">Yes</a> | 
-            No
+            <a href="{% url 'deleted' id %}">Yes</a> |
+            <a href="{% url 'topic_info' id %}">No</a>
         </p>
 {% endblock %}

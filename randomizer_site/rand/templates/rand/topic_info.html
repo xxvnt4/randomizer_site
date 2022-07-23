@@ -11,7 +11,7 @@
             {{ topic.subtitle }}
         </b> <br> <br>
         {% if topic.link %}
-            Source: <i>{{ topic.link }}</i> <br>
+            <i><a href="{{ topic.link }}">{{ topic.link }}</a></i> <br> <br>
         {% endif %}
         Date created: <i>{{ topic.date_created }}</i> <br>
         Date updated: <i>{{ topic.date_updated }}</i> <br>
