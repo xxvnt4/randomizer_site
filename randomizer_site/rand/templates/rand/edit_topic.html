@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
     {% include 'includes/navbar.html' %}
     <form method="POST">
         {% csrf_token %}
         <br>
-        <h1 align="center">Add new topic:</h1>
-        <div align="center">{{ form.title }}</div> <br>
-        <div align="center">{{ form.subtitle }}</div> <br>
-        <div align="center">{{ form.link }}</div> <br> <br>
+        <h1 align="center">Edit the topic:</h1>
+        <div align="center">Title: {{ form.title }}</div> <br>
+        <div align="center">Subtitle: {{ form.subtitle }}</div> <br>
+        <div align="center">Link: {{ form.link }}</div> <br> <br>
         <div align="center"><input type="submit" value="Add!"></div>
     </form>
 {% endblock %}

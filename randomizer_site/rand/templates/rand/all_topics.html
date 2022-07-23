@@ -1,10 +1,11 @@
-{% include 'base.html' %}
+{% extends 'base.html' %}
 
 
 {% block content %}
-        {% for topic in topics %}
-            <p align="center">
-                {{ topic }}
-            </p>
-        {% endfor %}
+    {% include 'includes/navbar.html' %}
+    {% for topic in topics %}
+        <p align="center">
+            <a href="{% url 'topic_info' topic.id %}">{{ topic }}</a>
+        </p>
+    {% endfor %}
 {% endblock %}

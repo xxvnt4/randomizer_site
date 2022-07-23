@@ -1,0 +1,24 @@
+{% include 'base.html' %}
+
+{% block title %}
+    {% include 'includes/navbar.html' %}
+    <p align="center">
+        <b>
+            {{ topic.title }}
+            {% if topic.subtitle %}
+                /
+            {% endif %}
+            {{ topic.subtitle }}
+        </b> <br> <br>
+        {% if topic.link %}
+            Source: <i>{{ topic.link }}</i> <br>
+        {% endif %}
+        Date created: <i>{{ topic.date_created }}</i> <br>
+        Date updated: <i>{{ topic.date_updated }}</i> <br>
+        Date watched: <i>{{ topic.date_watched }}</i> <br> <br>
+    </p>
+    <p align="center">
+        <a href="{% url 'edit_topic' topic.id %}">Edit</a> |
+        <a href="{% url 'confirm_remove' topic.id %}">Delete</a>
+    </p>
+{% endblock %}
